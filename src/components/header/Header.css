@@ -1,0 +1,99 @@
+header{
+    position: fixed;
+    width: 100%;
+    background: rgba(17, 10, 10, 0.95);
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    width: 200px;
+    margin: 10px;
+}
+.wrapper-header{
+    display: flex;
+    align-items: center;
+}
+.menu{
+    display: flex;
+    list-style: none;
+    margin:0;
+}
+.menu li{
+    margin-right: 10px;
+}
+.menu li a{
+    color: #fff;
+    text-decoration: none;
+}
+.trigger-menu{
+    color: #fff;
+    font-size: 30px;
+    position: absolute;
+    right: 1em;
+    display: none;
+}
+.trigger-menu:hover{
+    color: #fff;
+    opacity: 0.9;
+}
+.trigger-search{
+    color: #fff;
+    font-size: 30px;
+    position: absolute;
+    right: 1em;
+}
+.social-icon{
+    font-size: 20px;
+}
+
+/*==========  Non-Mobile First Method  ==========*/
+
+	/* Large Devices, Wide Screens */
+	@media only screen and (max-width : 1200px) {
+
+	}
+
+	/* Medium Devices, Desktops */
+	@media only screen and (max-width : 992px) {
+        .trigger-menu{
+            display: inline-block;
+        }
+        .trigger-search{
+            display: none;
+        }
+        .menu{
+            display: block;
+            position: fixed;
+            left: 0;
+            top: 80px;
+            width: 100%;
+            background: rgba(17, 10, 10);
+            height: 100%;
+            transition: all 0.3s ease-out; /* add transition property */
+            max-height: 0; /* hide the menu initially */
+            overflow: hidden; /* hide the overflow content */
+        }
+        .menu.show {
+            max-height: 100%; /* set a maximum height for the menu */
+        }
+        .menu li{
+            padding: 10px 0;
+            border-bottom: 1px solid;
+        }
+	}
+
+	/* Small Devices, Tablets */
+	@media only screen and (max-width : 768px) {
+
+	}
+
+	/* Extra Small Devices, Phones */ 
+	@media only screen and (max-width : 480px) {
+
+	}
+
+	/* Custom, iPhone Retina */ 
+	@media only screen and (max-width : 320px) {
+		
+	}
