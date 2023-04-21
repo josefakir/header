@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap');
 header{
     position: fixed;
     width: 100%;
     background: rgba(17, 10, 10, 0.95);
     height: 80px;
-    display: flex;
     align-items: center;
+    display: flex;
+    flex-flow: row wrap;
 }
 .logo{
     width: 200px;
@@ -13,11 +15,14 @@ header{
 .wrapper-header{
     display: flex;
     align-items: center;
+    width: 100vh;
 }
 .menu{
     display: flex;
     list-style: none;
     margin:0;
+    font-family: 'Fira Sans', sans-serif;
+
 }
 .menu li{
     margin-right: 10px;
@@ -28,7 +33,7 @@ header{
 }
 .trigger-menu{
     color: #fff;
-    font-size: 30px;
+    font-size: 20px;
     position: absolute;
     right: 1em;
     display: none;
@@ -39,14 +44,74 @@ header{
 }
 .trigger-search{
     color: #fff;
-    font-size: 30px;
+    font-size: 20px;
     position: absolute;
     right: 1em;
+    width: 30px;
+    height: 45px;
+}
+.trigger-search:hover{
+    color: #fff;
+    opacity: 0.9;
 }
 .social-icon{
     font-size: 20px;
 }
+.searchContainer{
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    background: #000;
+    max-height: 0; /* hide the menu initially */
+    overflow: hidden; /* hide the overflow content */
+    transition: all 0.3s ease-out; /* add transition property */
+}
+.searchContainer.show {
+    max-height: 100%; /* set a maximum height for the menu */
+}
+.searchInputWrapper{
+    width: 90%;
+    margin:10px auto;
+    height: 40px;
+}
+.searchInputWrapper form{
+    display: block;
+    height: 100%;
+}
+.searchInput{
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(213, 212, 212);
+    opacity: 0.9;
+    outline: none;
+    text-align: center;
+    min-height: 40px;
+}
 
+/* SOCIAL */
+.social-icon{
+    font-size: 20px;
+}
+.instagram{
+    /*
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+   */
+    color: #d6249f;
+    border-radius: 5px;
+}
+.facebook{
+    color: #3b5998;
+    border-radius: 5px;
+}
+.youtube{
+    color:#FF0000
+}
+.twitter{
+    color: #1DA1F2;
+}
+.hideDestop{
+    display: none;
+}
 /*==========  Non-Mobile First Method  ==========*/
 
 	/* Large Devices, Wide Screens */
@@ -73,6 +138,7 @@ header{
             transition: all 0.3s ease-out; /* add transition property */
             max-height: 0; /* hide the menu initially */
             overflow: hidden; /* hide the overflow content */
+            z-index: 2;
         }
         .menu.show {
             max-height: 100%; /* set a maximum height for the menu */
@@ -80,6 +146,12 @@ header{
         .menu li{
             padding: 10px 0;
             border-bottom: 1px solid;
+        }
+        .hideMobile{
+            display: none;
+        }
+        .hideDestop{
+            display: block;
         }
 	}
 
